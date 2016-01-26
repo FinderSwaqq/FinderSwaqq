@@ -3,12 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter name of Lost Item"
-        android:textSize="32sp"
-        android:layout_margin="16dp"
+        android:text="Enter name of lost item"
+        android:textSize="28sp"
+        android:layout_margin="14dp"
         android:id="@+id/lost_item_name"
         android:textColor="@android:color/black"/>
 
@@ -16,9 +18,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Example: TV Remote"
-        android:textSize="32sp"
+        android:textSize="28sp"
         android:layout_below="@id/lost_item_name"
-        android:layout_margin="16dp"
+        android:layout_margin="14dp"
         android:id="@+id/lost_item_edit_text"
         android:imeOptions="actionDone"
         android:singleLine="true"/>
@@ -26,17 +28,34 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Choose a sound your item will make"
-        android:textSize="32sp"
-        android:layout_margin="16dp"
-        android:id="@+id/sound_selection"
+        android:text="Choose an icon for yo device foo"
+        android:textSize="28sp"
+        android:layout_margin="14dp"
+        android:id="@+id/icon_selection_text"
         android:layout_below="@id/lost_item_edit_text"
         android:textColor="@android:color/black"/>
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="14dp"
+        android:id="@+id/icon_selection"
+        android:layout_below="@id/icon_selection_text"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose a sound your item will make"
+        android:textSize="28sp"
+        android:layout_margin="14dp"
+        android:id="@+id/sound_selection"
+        android:layout_below="@id/icon_selection"
+        android:textColor="@android:color/black"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
         android:id="@+id/sound_selection_spinner"
         android:layout_below="@id/sound_selection" />
 
@@ -48,8 +67,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_margin="16dp"
-        android:textSize="32sp"
+        android:layout_margin="14dp"
+        android:textSize="28sp"
         style="?android:attr/borderlessButtonStyle"
         android:id="@+id/save_button"/>
 
