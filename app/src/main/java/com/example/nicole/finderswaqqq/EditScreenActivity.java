@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import android.widget.Toast;
 
 public class EditScreenActivity extends AppCompatActivity {
 
@@ -34,6 +35,21 @@ public class EditScreenActivity extends AppCompatActivity {
         iconOptions[5] = R.drawable.remotee4;
         iconOptions[6] = R.drawable.ipod;
 
+        if(getIntent().hasExtra("lostItem"))
+        {
+            LostItem lostitem = getIntent().getParcelableExtra("lostItem");
+
+            ((EditText) findViewById(R.id.lost_item_edit_text)).setText(lostitem.name);
+
+            Spinner spinner = (Spinner) findViewById(R.id.icon_selection);
+            spinner.setSelection(lostitem.imagePosition);
+
+            lostItemId = lostitem.itemId;
+
+        }
+
+        Spinner iconSpinner = (Spinner)findViewById(R.id.icon_selection);
+        iconSpinner.setAdapter(new IconSpinnerAdapter(this, R.layout.spinner_icon, iconOptions));
 
         Button button = (Button) findViewById(R.id.save_button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -55,26 +71,12 @@ public class EditScreenActivity extends AppCompatActivity {
                 sendIntent.putExtras(bundle);
 
                 setResult(123, sendIntent);
+
+                Toast.makeText(getApplicationContext(), "Excellent choiceee ;)", Toast.LENGTH_SHORT).show();
+
                 finish();
             }
         });
-
-        Spinner iconSpinner = (Spinner)findViewById(R.id.icon_selection);
-        iconSpinner.setAdapter(new IconSpinnerAdapter(this, R.layout.spinner_icon, iconOptions));
-
-        if(getIntent().hasExtra("lostItem"))
-        {
-            LostItem lostitem = getIntent().getParcelableExtra("lostItem");
-
-            ((EditText) findViewById(R.id.lost_item_edit_text)).setText(lostitem.name);
-
-            Spinner spinner = (Spinner) findViewById(R.id.icon_selection);
-            spinner.setSelection(lostitem.imagePosition);
-
-            lostItemId = lostitem.itemId;
-
-        }
-
     }
 
     private int getIndex(Spinner spinner, Integer myString){

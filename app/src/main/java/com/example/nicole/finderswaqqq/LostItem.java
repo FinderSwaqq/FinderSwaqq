@@ -23,6 +23,7 @@ public class LostItem implements Parcelable{
         name = in.readString();
         image = in.readInt();
         imagePosition = in.readInt();
+        itemId = in.readInt();
     }
 
     public static final Creator<LostItem> CREATOR = new Creator<LostItem>() {
@@ -47,5 +48,6 @@ public class LostItem implements Parcelable{
         dest.writeString(name);
         dest.writeInt(image);
         dest.writeInt(imagePosition);
+        dest.writeInt(itemId);
     }
 }

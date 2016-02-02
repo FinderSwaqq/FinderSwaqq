@@ -113,8 +113,9 @@ public class HomeActivity extends AppCompatActivity {
         LostItem lostItem = (LostItem)data.getParcelableExtra("lostItem");
         if(itemsContainItemId(lostItem.itemId))
         {
-            _items.remove(lostItem.itemId);
-            _items.add(lostItem.itemId, lostItem);
+            int position = lostItem.itemId - 1;
+            _items.remove(position);
+            _items.add(position, lostItem);
         }
         else
         {
