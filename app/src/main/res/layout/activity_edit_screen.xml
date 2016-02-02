@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
 
 
@@ -57,8 +58,24 @@
         android:layout_height="wrap_content"
         android:layout_margin="14dp"
         android:id="@+id/sound_selection_spinner"
-        android:layout_below="@id/sound_selection" />
+        android:layout_below="@id/sound_selection_spinner" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Which device are yall connecting to??"
+        android:textSize="28sp"
+        android:layout_margin="14dp"
+        android:id="@+id/bluetooth_selection"
+        android:layout_below="@id/sound_selection"
+        android:textColor="@android:color/black"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:id="@+id/bluetooth_selection_spinner"
+        android:layout_below="@id/sound_selection" />
 
     <Button
         android:layout_width="wrap_content"
